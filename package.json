@@ -1,5 +1,5 @@
 {
-  "name": "digifoxPoc",
+  "name": "digifox-poc",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,11 +7,20 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postinstall": "npx rn-nodeify --install events,stream,assert,crypto,process --hack --yarn"
   },
   "dependencies": {
+    "assert": "^1.1.1",
+    "ethers": "^5.0.18",
+    "events": "^1.0.0",
+    "process": "^0.11.0",
     "react": "16.13.1",
-    "react-native": "0.63.3"
+    "react-native": "0.63.3",
+    "react-native-crypto": "^2.2.0",
+    "react-native-randombytes": "^3.5.3",
+    "readable-stream": "1.0.33",
+    "stream-browserify": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -25,5 +34,23 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "react-native": {
+    "crypto": "react-native-crypto",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "stream": "stream-browserify"
+  },
+  "browser": {
+    "crypto": "react-native-crypto",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "stream": "stream-browserify"
   }
 }
